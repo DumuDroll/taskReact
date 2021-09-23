@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Classroom</title>
-    <link rel="stylesheet" href="core/bootstrap-5.1.1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="core/css/classroom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha384-Qg00WFl9r0Xr6rUqNLv1ffTSSKEFFCDCKVyHZ+sVt8KuvG99nWw5RNvbhuKgif9z"
-        crossorigin="anonymous"></script>
+
 <script src="https://unpkg.com/react@17/umd/react.development.js"
         integrity="sha384-xQwCoNcK/7P3Lpv50IZSEbJdpqbToWEODAUyI/RECaRXmOE2apWt7htari8kvKa/"
         crossorigin="anonymous"></script>
@@ -22,33 +19,35 @@
     let userName = $("#user").val();
 </script>
 
-<div class="navbar navbar-expand-md navbar-dark bg-dark mb-4" role="navigation">
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown1">
-                    <li class="dropdown-item" href="#"></li>
 
-                </ul>
-            </li>
-        </ul>
-        <a class="nav-link" id="hand-item"  onclick="onClickHandAction()"> Hand Up</a>
-        <div class="form-inline mt-2 mt-md-0">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${userName}">Name</a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdown2">
-                        <li class="dropdown-item" href="#"> </li>
+<div class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
 
+
+
+                <div class="navbar-collapse collapse" id="mobile_menu">
+                    <ul class="nav navbar-nav">
+
+                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a id="hand-item"  onclick="onClickHandAction()"> Hand Up</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <a onclick="logout()" th:href="@{/logout}">Logout</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" th:text="${userName}"> name <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a onclick="logout()" th:href="@{/logout}">Logout</a>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 <main role="main" class="container">
     <div class="jumbotron text-center">
         <div id="users" class="centered-top">
@@ -56,6 +55,8 @@
     </div>
 </main>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script th:src="@{/core/js/members.js}"></script>
 <script th:src="@{/core/js/user.js}"></script>
 <script th:src="@{/core/js/classroom.js}"></script>

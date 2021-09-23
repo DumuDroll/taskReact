@@ -10,6 +10,7 @@ webSocket.onmessage = function (event) {
     let isConnected = users.find((user) => user.name === name.val());
     if (typeof isConnected != "undefined") {
         alert("User with this name is already connected");
+        window.location.reload(true);
     } else if (flag === false) {
         flag = true;
     }

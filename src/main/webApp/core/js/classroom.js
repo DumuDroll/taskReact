@@ -43,9 +43,9 @@ function messageHandler(event) {
     let hand_state =users.find((user) => user.name === currentUser.name).hand_up;
 
     if (hand_state === false) {
-        handTextStatus = "Rise hand up";
+        handTextStatus = "Raise hand up";
     } else {
-        handTextStatus = "Rise hand down";
+        handTextStatus = "Put hand down";
     }
 
     if (currentUser.name !== message.user) {
