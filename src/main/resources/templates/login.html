@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom login page</title>
+    <link rel="stylesheet" href="core/bootstrap-5.1.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="core/css/login.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+                <div class="card-body p-4 p-sm-5">
+                    <form action="/login" method="POST">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="name" class="form-control" onchange="checkName()" id="name" placeholder="Name">
+                            <label for="name">Your name:</label>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign
+                                in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha384-Qg00WFl9r0Xr6rUqNLv1ffTSSKEFFCDCKVyHZ+sVt8KuvG99nWw5RNvbhuKgif9z"
+        crossorigin="anonymous"></script>
+<script th:src="@{/core/js/login.js}"></script>
+</html>
